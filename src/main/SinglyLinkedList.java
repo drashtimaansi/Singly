@@ -9,7 +9,9 @@ public class SinglyLinkedList {
 public void insert(int value){
    head = new Node(value, head);
 }
-
+public String toString(){
+    return "";
+}
 
 private static class Node{
 private int data;
