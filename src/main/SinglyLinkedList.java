@@ -8,8 +8,21 @@ public class SinglyLinkedList {
     // method to insert a new node at the head
 public void insert(int value){
    head = new Node(value, head);
-   size++;
+
+  /* Node node = new Node(value, head);
+   head = node;*/
+
+  size++;
 }
+
+//method to insert a new node after a node
+public void insert(int value, Node node ){
+   node.next = new Node(value, node.next);
+    size++;
+}
+
+
+
 public String toString(){
     StringBuilder result = new StringBuilder();
 
@@ -47,6 +60,16 @@ private int data;
         for (int i = 0; i < 5; i++) {
             linkedList.insert(i+1);
         }
+
+        Node temp = linkedList.head;
+        while(temp != null){
+            if(temp.data == 5){
+                linkedList.insert(42,temp);
+                break;
+            }
+            temp=temp.next;
+        }
+
 
         System.out.println(linkedList);
 
