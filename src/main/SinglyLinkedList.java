@@ -6,7 +6,9 @@ public class SinglyLinkedList {
     private int size = 0;
 
     // method to insert a new node at the head
-
+public void insert(int value){
+   head = new Node(value, head);
+}
 
 
 private static class Node{
