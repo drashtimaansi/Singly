@@ -13,16 +13,17 @@ public String toString(){
     StringBuilder result = new StringBuilder();
 
     Node temp = head;
+    System.out.print("[");
 
     while(temp != null){
         result.append(temp.data);
         if(temp.next != null) {
-            result.append(" > ");
+            result.append(" -> ");
         }
         temp = temp.next;
     }
 
-    return result.toString();
+    return result.append("]").toString();
 }
 
 private static class Node{
@@ -42,6 +43,11 @@ private int data;
 
     public static void main(String[] args) {
     SinglyLinkedList linkedList = new SinglyLinkedList();
+        for (int i = 0; i < 5; i++) {
+            linkedList.insert(i+1);
+        }
+
+        System.out.println(linkedList);
 
     }
 
