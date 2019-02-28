@@ -73,6 +73,19 @@ public int remove(int data){
     return response;
 }
 
+public boolean search(int data){
+    boolean response = false;
+    Node temp = this.head;
+    while(temp!=null){
+    if(temp.data == data){
+        response = true;
+        break;
+    }
+    temp = temp.next;
+    }
+    return response;
+}
+
 
 
 public String toString(){
@@ -128,6 +141,7 @@ private int data;
 
         System.out.println(linkedList);
         System.out.println(linkedList.size);
+        System.out.println(linkedList.search(2));
 
 
     }
